@@ -1,3 +1,4 @@
+import { getErrorMessage } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { Button } from "@/components/ui/button";
@@ -49,7 +50,7 @@ export default function Tailor() {
 
       if (error) throw error;
       setProfile(data);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error fetching profile:", error);
     }
   };
@@ -85,10 +86,10 @@ export default function Tailor() {
 
       if (error) throw error;
       setResult(data);
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: "Error generating content",
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     } finally {

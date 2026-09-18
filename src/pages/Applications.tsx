@@ -1,3 +1,4 @@
+import { getErrorMessage } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { Button } from "@/components/ui/button";
@@ -61,10 +62,10 @@ export default function Applications() {
 
       if (error) throw error;
       setApplications(data || []);
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: "Error fetching applications",
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     } finally {
@@ -118,10 +119,10 @@ export default function Applications() {
       }
       handleCloseModal();
       fetchApplications();
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: "Error saving application",
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     }
@@ -134,10 +135,10 @@ export default function Applications() {
       toast({ title: "Application deleted" });
       handleCloseModal();
       fetchApplications();
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: "Error deleting application",
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     }
@@ -151,10 +152,10 @@ export default function Applications() {
         .eq("id", id);
       if (error) throw error;
       fetchApplications();
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: "Error updating status",
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     }

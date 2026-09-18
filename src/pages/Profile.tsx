@@ -1,3 +1,4 @@
+import { getErrorMessage } from "@/lib/utils";
 import { useEffect, useState, useRef } from "react";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { Button } from "@/components/ui/button";
@@ -56,10 +57,10 @@ export default function Profile() {
       if (data) {
         setProfile(data);
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: "Error fetching profile",
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     } finally {
@@ -82,10 +83,10 @@ export default function Profile() {
 
       if (error) throw error;
       toast({ title: "Profile saved successfully" });
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: "Error saving profile",
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     } finally {
@@ -135,10 +136,10 @@ export default function Profile() {
         .getPublicUrl(fileName);
 
       return urlData.publicUrl;
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         title: `Error uploading ${type}`,
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
       return null;
