@@ -61,13 +61,7 @@ export default function Auth() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      {/* Background glow effect */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      </div>
-
-      <Card className="w-full max-w-md glass border-border/50 animate-in">
+      <Card className="w-full max-w-md glass animate-in">
         <CardHeader className="text-center space-y-4">
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
             <Briefcase className="h-6 w-6 text-primary-foreground" />

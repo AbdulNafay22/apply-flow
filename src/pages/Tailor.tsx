@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { Sparkles, Copy, Loader2, Check, AlertCircle } from "lucide-react";
+import { FileText, Copy, Loader2, Check, AlertCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 interface Profile {
@@ -163,7 +163,7 @@ export default function Tailor() {
                     </>
                   ) : (
                     <>
-                      <Sparkles className="h-4 w-4" />
+                      <FileText className="h-4 w-4" />
                       Generate Tailor Pack
                     </>
                   )}
@@ -331,7 +331,7 @@ export default function Tailor() {
             ) : (
               <Card className="glass border-border/50 h-full min-h-[400px] flex items-center justify-center">
                 <CardContent className="text-center">
-                  <Sparkles className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                  <FileText className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                   <p className="text-muted-foreground">
                     Paste a job posting and click generate to create your tailor
                     pack

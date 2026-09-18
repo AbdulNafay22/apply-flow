@@ -4,7 +4,7 @@ import {
   LayoutDashboard,
   Briefcase,
   User,
-  Sparkles,
+  FileText,
   LogOut,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -14,7 +14,7 @@ const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Applications", href: "/applications", icon: Briefcase },
   { name: "Profile", href: "/profile", icon: User },
-  { name: "Tailor", href: "/tailor", icon: Sparkles },
+  { name: "Tailor", href: "/tailor", icon: FileText },
 ];
 
 interface SidebarProps {
