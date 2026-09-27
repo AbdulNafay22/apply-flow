@@ -1,5 +1,7 @@
 # ApplyFlow
 
+**Live Demo:** https://apply-flow-psi-three.vercel.app
+
 A job application tracker for students and early-career developers. Track every co-op, internship or job application through a pipeline, keep your profile and documents in one place, and paste in a job posting to get AI-tailored resume bullets and a cover letter draft.
 
 ## Features
